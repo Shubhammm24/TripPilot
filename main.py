@@ -1,4 +1,4 @@
-"""FastAPI backend for the TriPi AI Travel Planner.
+"""FastAPI backend for the TripPilot AI Travel Planner.
 
 Run with:
     uvicorn main:app --reload --port 8000
@@ -28,7 +28,7 @@ load_dotenv()
 # ---------------------------------------------------------------------------
 
 app = FastAPI(
-    title="TriPi — AI Travel Planner API",
+    title="TripPilot — AI Travel Planner API",
     description="Agentic travel planning powered by LangGraph + Gemini",
     version="2.0.0",
 )
@@ -120,8 +120,8 @@ def _invoke_agent(message: str, thread_id: str) -> tuple[str, list[str]]:
     config = {"configurable": {"thread_id": thread_id}}
 
     print(f"\n{'='*60}")
-    print(f"[TriPi] Invoking agent with thread: {thread_id}")
-    print(f"[TriPi] Prompt: {message[:200]}...")
+    print(f"[TripPilot] Invoking agent with thread: {thread_id}")
+    print(f"[TripPilot] Prompt: {message[:200]}...")
     print(f"{'='*60}\n")
 
     result = agent.invoke({"messages": [HumanMessage(content=message)]}, config)
@@ -131,7 +131,7 @@ def _invoke_agent(message: str, thread_id: str) -> tuple[str, list[str]]:
     ai_response = ""
     tool_names: list[str] = []
 
-    print(f"[TriPi] Got {len(messages)} messages back from agent")
+    print(f"[TripPilot] Got {len(messages)} messages back from agent")
 
     for msg in messages:
         msg_type = getattr(msg, "type", None)
@@ -155,10 +155,10 @@ def _invoke_agent(message: str, thread_id: str) -> tuple[str, list[str]]:
             if name:
                 tool_names.append(name)
 
-    print(f"[TriPi] Tools used: {tool_names}")
-    print(f"[TriPi] Response length: {len(ai_response)} chars")
+    print(f"[TripPilot] Tools used: {tool_names}")
+    print(f"[TripPilot] Response length: {len(ai_response)} chars")
     if not ai_response:
-        print(f"[TriPi] WARNING: Empty response! Raw messages:")
+        print(f"[TripPilot] WARNING: Empty response! Raw messages:")
         for i, m in enumerate(messages):
             print(f"  [{i}] type={getattr(m, 'type', '?')} content_type={type(getattr(m, 'content', None)).__name__} content_preview={str(getattr(m, 'content', ''))[:100]}")
 
@@ -173,7 +173,7 @@ def _invoke_agent(message: str, thread_id: str) -> tuple[str, list[str]]:
 @app.get("/health")
 async def health():
     """Health check endpoint."""
-    return {"status": "ok", "agent": "TriPi v2.0"}
+    return {"status": "ok", "agent": "TripPilot v2.0"}
 
 
 @app.post("/api/generate", response_model=ItineraryResponse)
@@ -214,7 +214,7 @@ Please use your tools to gather real data and then create a detailed day-by-day 
         )
     except Exception as e:
         error_detail = traceback.format_exc()
-        print(f"\n[TriPi] ERROR in /api/generate:\n{error_detail}")
+        print(f"\n[TripPilot] ERROR in /api/generate:\n{error_detail}")
         return ItineraryResponse(
             session_id=session_id,
             itinerary=f"## ⚠️ Error Generating Itinerary\n\nSomething went wrong: **{str(e)}**\n\nPlease check that your `GOOGLE_API_KEY` is valid in the `.env` file and try again.",
@@ -241,7 +241,7 @@ async def refine_itinerary(req: RefineRequest):
         )
     except Exception as e:
         error_detail = traceback.format_exc()
-        print(f"\n[TriPi] ERROR in /api/refine:\n{error_detail}")
+        print(f"\n[TripPilot] ERROR in /api/refine:\n{error_detail}")
         return ItineraryResponse(
             session_id=req.session_id,
             itinerary=f"## ⚠️ Error Refining\n\n{str(e)}",
@@ -267,7 +267,7 @@ async def chat(req: ChatRequest):
         )
     except Exception as e:
         error_detail = traceback.format_exc()
-        print(f"\n[TriPi] ERROR in /api/chat:\n{error_detail}")
+        print(f"\n[TripPilot] ERROR in /api/chat:\n{error_detail}")
         return ItineraryResponse(
             session_id=req.session_id,
             itinerary=f"## ⚠️ Error\n\n{str(e)}",
@@ -413,11 +413,11 @@ IMPORTANT:
         return ExtractResponse(places=places, budget_summary=budget_summary)
 
     except json.JSONDecodeError as e:
-        print(f"[TriPi] JSON parse error in extract-places: {e}")
-        print(f"[TriPi] Raw content: {content[:500]}")
+        print(f"[TripPilot] JSON parse error in extract-places: {e}")
+        print(f"[TripPilot] Raw content: {content[:500]}")
         return ExtractResponse()
     except Exception as e:
-        print(f"[TriPi] ERROR in /api/extract-places: {traceback.format_exc()}")
+        print(f"[TripPilot] ERROR in /api/extract-places: {traceback.format_exc()}")
         return ExtractResponse()
 
 
@@ -675,13 +675,13 @@ async def plan_trip(req: PlanRequest):
                     parts.append(part["text"])
             raw_content = "".join(parts)
 
-        print(f"[TriPi] /api/plan raw response length: {len(raw_content)}")
+        print(f"[TripPilot] /api/plan raw response length: {len(raw_content)}")
 
         try:
             itinerary = _parse_structured_itinerary(raw_content)
         except ValueError as parse_err:
-            print(f"[TriPi] Parse error: {parse_err}")
-            print(f"[TriPi] Raw content preview: {raw_content[:500]}")
+            print(f"[TripPilot] Parse error: {parse_err}")
+            print(f"[TripPilot] Raw content preview: {raw_content[:500]}")
             return PlanResponse(
                 success=False,
                 error=f"The AI returned an invalid response. {str(parse_err)}",
@@ -714,7 +714,7 @@ async def plan_trip(req: PlanRequest):
 
     except Exception as e:
         error_detail = traceback.format_exc()
-        print(f"[TriPi] ERROR in /api/plan: {error_detail}")
+        print(f"[TripPilot] ERROR in /api/plan: {error_detail}")
         return PlanResponse(
             success=False,
             error=f"Failed to generate itinerary: {str(e)}",
@@ -776,7 +776,7 @@ Only modify what the user asked for. Return ONLY valid JSON, no markdown or expl
 
     except Exception as e:
         error_detail = traceback.format_exc()
-        print(f"[TriPi] ERROR in /api/refine-plan: {error_detail}")
+        print(f"[TripPilot] ERROR in /api/refine-plan: {error_detail}")
         return PlanResponse(
             success=False,
             error=f"Failed to refine itinerary: {str(e)}",
@@ -822,6 +822,6 @@ async def unsplash_proxy(query: str, per_page: int = 6):
         return {"results": results}
 
     except Exception as e:
-        print(f"[TriPi] Unsplash proxy error: {e}")
+        print(f"[TripPilot] Unsplash proxy error: {e}")
         return {"results": []}
 

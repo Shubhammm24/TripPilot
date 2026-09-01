@@ -49,7 +49,7 @@ export default function Navbar() {
               backgroundClip: "text",
             }}
           >
-            TriPi
+            TripPilot
           </span>
         </Link>
 

@@ -1,4 +1,4 @@
-"""RAG knowledge retriever tool for the TriPi agent."""
+"""RAG knowledge retriever tool for the TripPilot agent."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from langchain_core.tools import tool
 
 @tool
 def knowledge_search(query: str) -> str:
-    """Search the TriPi knowledge base for travel tips, safety info, packing guides, and destination advice.
+    """Search the TripPilot knowledge base for travel tips, safety info, packing guides, and destination advice.
 
     Uses ChromaDB vector store with Gemini embeddings for semantic retrieval.
 
@@ -31,7 +31,7 @@ def knowledge_search(query: str) -> str:
                 "The AI agent will use its built-in knowledge instead."
             )
 
-        lines = ["📚 From the TriPi Knowledge Base:\n"]
+        lines = ["📚 From the TripPilot Knowledge Base:\n"]
         for i, doc in enumerate(results, 1):
             category = doc.metadata.get("category", "general")
             content = doc.page_content.strip()

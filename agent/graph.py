@@ -1,4 +1,4 @@
-"""LangGraph ReAct agent for TriPi travel planner."""
+"""LangGraph ReAct agent for TripPilot travel planner."""
 
 from __future__ import annotations
 

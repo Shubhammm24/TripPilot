@@ -29,7 +29,7 @@ def places_search(destination: str, category: str = "attractions") -> str:
             "limit": 1,
             "addressdetails": 1,
         }
-        headers = {"User-Agent": "TriPi-TravelAgent/1.0"}
+        headers = {"User-Agent": "TripPilot-TravelAgent/1.0"}
 
         with httpx.Client(timeout=10) as client:
             geo_resp = client.get(geo_url, params=geo_params, headers=headers)

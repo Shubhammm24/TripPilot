@@ -1,4 +1,4 @@
-"""Document ingestion pipeline for the TriPi knowledge base.
+"""Document ingestion pipeline for the TripPilot knowledge base.
 
 Usage:
     python -m rag.ingest

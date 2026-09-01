@@ -23,7 +23,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("tripi-theme") as Theme | null;
+    const stored = localStorage.getItem("trippilot-theme") as Theme | null;
     if (stored) setTheme(stored);
     setMounted(true);
   }, []);
@@ -31,7 +31,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (mounted) {
       document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("tripi-theme", theme);
+      localStorage.setItem("trippilot-theme", theme);
     }
   }, [theme, mounted]);
 

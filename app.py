@@ -547,7 +547,7 @@ def render_trip_chips(prefs: TravelPreferences):
 
 def main():
     st.set_page_config(
-        page_title="TriPi — AI Travel Planner",
+        page_title="TripPilot — AI Travel Planner",
         page_icon="✈️",
         layout="wide",
         initial_sidebar_state="collapsed",
@@ -572,7 +572,7 @@ def main():
         # Hero section
         st.markdown("""
         <div class="hero-section">
-            <div class="hero-title">TriPi</div>
+            <div class="hero-title">TripPilot</div>
             <div class="hero-subtitle">
                 Your AI travel planner. Tell us your dream trip and we'll craft<br>
                 a personalized, day-by-day itinerary in seconds.

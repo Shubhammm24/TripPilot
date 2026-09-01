@@ -78,7 +78,7 @@ export default function PlanPage() {
 
       // Stale response guard
       if (thisRequestId !== requestIdRef.current) {
-        console.log("[TriPi] Discarding stale response", thisRequestId, "current:", requestIdRef.current);
+        console.log("[TripPilot] Discarding stale response", thisRequestId, "current:", requestIdRef.current);
         return;
       }
 

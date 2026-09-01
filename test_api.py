@@ -1,4 +1,4 @@
-"""Quick test script for the TriPi API."""
+"""Quick test script for the TripPilot API."""
 import httpx
 import json
 

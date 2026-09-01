@@ -1,4 +1,4 @@
-"""Streaming callbacks for the TriPi agent — used to surface tool activity in the UI."""
+"""Streaming callbacks for the TripPilot agent — used to surface tool activity in the UI."""
 
 from __future__ import annotations
 

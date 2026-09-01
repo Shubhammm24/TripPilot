@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/app/providers/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "TriPi — AI Travel Planner",
+  title: "TripPilot — AI Travel Planner",
   description:
     "Plan your next adventure with intelligent AI agents that gather real-time weather, local insights, and budget optimization to craft personalized itineraries.",
 };

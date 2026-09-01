@@ -109,7 +109,7 @@ export default function ItineraryMap({ places, destination }: ItineraryMapProps)
 
         // Create custom marker
         const markerIcon = L.divIcon({
-          className: "tripi-marker",
+          className: "trippilot-marker",
           html: `<div style="
             background: ${color};
             width: 32px;
@@ -142,7 +142,7 @@ export default function ItineraryMap({ places, destination }: ItineraryMapProps)
             ${place.description ? `<br/><span style="color: #c7c4d7; font-size: 12px;">${place.description}</span>` : ""}
           </div>`,
           {
-            className: "tripi-popup",
+            className: "trippilot-popup",
           }
         );
 

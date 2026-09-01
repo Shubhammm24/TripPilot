@@ -1,4 +1,4 @@
-"""Agent __init__.py — public API for the TriPi agent package."""
+"""Agent __init__.py — public API for the TripPilot agent package."""
 
 from agent.state import AgentState, TripRequest  # noqa: F401
 

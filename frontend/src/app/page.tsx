@@ -147,7 +147,7 @@ export default function Home() {
               margin: "0 auto 40px",
             }}
           >
-            TriPi uses intelligent agents to craft personalized itineraries with
+            TripPilot uses intelligent agents to craft personalized itineraries with
             real-time weather, local insights, and budget optimization.
           </motion.p>
 
@@ -326,13 +326,13 @@ export default function Home() {
               backgroundClip: "text",
             }}
           >
-            TriPi
+            TripPilot
           </span>
           <p className="body-md" style={{ color: "var(--muted)", marginTop: 12 }}>
             AI-powered travel planning • Built with LangGraph + Gemini
           </p>
           <p style={{ color: "var(--outline)", fontSize: 13, marginTop: 16 }}>
-            © {new Date().getFullYear()} TriPi. All rights reserved.
+            © {new Date().getFullYear()} TripPilot. All rights reserved.
           </p>
         </div>
       </footer>

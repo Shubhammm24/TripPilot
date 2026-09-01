@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* ═══════════════════════════════════════════════════════════
-   TriPi Design System — "Hyper-Spectral" Futuristic Minimal
+   TripPilot Design System — "Hyper-Spectral" Futuristic Minimal
    Generated from Stitch MCP design tokens
    ═══════════════════════════════════════════════════════════ */
 
@@ -510,7 +510,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--muted) !important;
 }
 
-.tripi-marker {
+.trippilot-marker {
   background: transparent !important;
   border: none !important;
 }

@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/TriPi-AI_Trip_Planner-6C63FF?style=for-the-badge&logo=airplane&logoColor=white" alt="TriPi Badge" />
+  <img src="https://img.shields.io/badge/TripPilot-AI_Trip_Planner-6C63FF?style=for-the-badge&logo=airplane&logoColor=white" alt="TripPilot Badge" />
 </p>
 
-<h1 align="center">✈️ TriPi — AI Trip Planner</h1>
+<h1 align="center">✈️ TripPilot — AI Trip Planner</h1>
 
 <p align="center">
   <strong>A React app that turns free-form trip descriptions into interactive, editable day-by-day itineraries.</strong><br/>
@@ -39,8 +39,8 @@
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/<your-username>/TriPi.git
-cd TriPi
+git clone https://github.com/<your-username>/TripPilot.git
+cd TripPilot
 
 # Backend
 pip install -r requirements.txt

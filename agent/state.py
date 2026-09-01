@@ -1,4 +1,4 @@
-"""Agent state schema for TriPi travel planner."""
+"""Agent state schema for TripPilot travel planner."""
 
 from __future__ import annotations
 

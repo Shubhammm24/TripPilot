@@ -1,4 +1,4 @@
-"""ChromaDB vector store for the TriPi RAG knowledge base."""
+"""ChromaDB vector store for the TripPilot RAG knowledge base."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 
 _PERSIST_DIR = Path(__file__).resolve().parent / ".chroma"
-_COLLECTION_NAME = "tripi_knowledge"
+_COLLECTION_NAME = "trippilot_knowledge"
 
 
 def get_embeddings(api_key: str | None = None) -> GoogleGenerativeAIEmbeddings:
