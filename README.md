@@ -63,7 +63,7 @@ cp .env.example .env
 
 ```bash
 # From the project root
-uvicorn main:app --reload --port 8000
+python -m uvicorn main:app --reload --port 8000
 ```
 
 ### 4. Start the Frontend

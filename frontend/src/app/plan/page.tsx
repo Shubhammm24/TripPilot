@@ -64,7 +64,7 @@ export default function PlanPage() {
 
     // AbortController for timeout
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout
+    const timeoutId = setTimeout(() => controller.abort(), 120000); // 120s timeout
 
     try {
       const res = await fetch(`${API_URL}/api/plan`, {
@@ -128,7 +128,7 @@ export default function PlanPage() {
 
       if (err instanceof DOMException && err.name === "AbortError") {
         setErrorInfo({
-          message: "The request took too long (over 60 seconds). The AI might be overloaded. Please try again.",
+          message: "The request took too long (over 120 seconds). The AI might be overloaded. Please try again.",
           type: "timeout",
           rawResponse: null,
         });
