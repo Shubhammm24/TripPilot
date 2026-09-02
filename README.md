@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <strong>🌍 Live Demo:</strong> <a href="https://trippilot.vercel.app">trippilot.vercel.app</a>
+  <strong>🌍 Live Demo:</strong> <a href="https://trip-pilot-flax.vercel.app">trip-pilot-flax.vercel.app</a>
 </p>
 
 ---
