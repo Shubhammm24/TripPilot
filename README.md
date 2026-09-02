@@ -16,6 +16,10 @@
   <img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=flat-square&logo=fastapi&logoColor=white" />
 </p>
 
+<p align="center">
+  <strong>🌍 Live Demo:</strong> <a href="https://trippilot.vercel.app">trippilot.vercel.app</a>
+</p>
+
 ---
 
 ## 🎯 What It Does
